@@ -27,3 +27,6 @@ next-env.d.ts
 # one drive sync metadata
 desktop.ini
 Thumbs.db
+
+# local agent instructions (not part of the repo)
+AGENTS.md
