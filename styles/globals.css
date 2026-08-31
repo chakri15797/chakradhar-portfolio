@@ -83,7 +83,7 @@ body {
   background:
     linear-gradient(var(--c-grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--c-grid) 1px, transparent 1px),
-    radial-gradient(ellipse at 50% 0%, rgba(7,26,39,0.55), rgba(5,16,25,0.88) 75%);
+    radial-gradient(ellipse at 50% 0%, rgba(7,26,39,0.42), rgba(5,16,25,0.72) 75%);
   background-size: 32px 32px, 32px 32px, 100% 100%;
   animation: grid-drift 40s linear infinite;
   pointer-events: none;
@@ -194,7 +194,7 @@ button { font: inherit; }
 
 /* ---------- Layout shell ---------- */
 .shell { max-width: var(--shell); margin: 0 auto; padding: 0 24px; }
-section { padding: 64px 0; background: rgba(5,16,25,0.68); backdrop-filter: blur(3px); }
+section { padding: 64px 0; background: rgba(5,16,25,0.55); backdrop-filter: blur(2px); }
 section > .inner, footer > .inner { max-width: var(--shell); margin: 0 auto; padding: 0 24px; }
 
 /* ---------- Nav ---------- */
