@@ -1,0 +1,9 @@
+# Next.js on Netlify — output goes to .next, managed by the Netlify Next.js plugin.
+# This overrides the old UI publish dir ("build") that was causing deploy to fail.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
