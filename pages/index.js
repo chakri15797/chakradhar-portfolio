@@ -265,6 +265,7 @@ const MARQUEE = [
 ];
 
 const NAV = [
+  ["#top", "Overview"],
   ["#views", "Views"],
   ["#summary", "Summary"],
   ["#stack", "Stack"],
@@ -460,6 +461,22 @@ export default function Index({ hasPhoto = false }) {
     document.getElementById("pageNav").classList.toggle("open");
   };
 
+  const closeMenu = (e) => {
+    const nav = document.getElementById("pageNav");
+    if (nav.classList.contains("open")) {
+      nav.classList.remove("open");
+      const target = document.querySelector(e.target.getAttribute("href"));
+      if (target) {
+        e.preventDefault();
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        window.setTimeout(() => {
+          const top = target.getBoundingClientRect().top + window.scrollY - 72;
+          window.scrollTo({ top, behavior: reduce ? "auto" : "smooth" });
+        }, 50);
+      }
+    }
+  };
+
   return (
     <main id="main">
       {/* NAV */}
@@ -470,7 +487,7 @@ export default function Index({ hasPhoto = false }) {
         </button>
         <nav id="pageNav">
           {NAV.map(([href, label]) => (
-            <a key={href} href={href}>{label}</a>
+            <a key={href} href={href} onClick={closeMenu}>{label}</a>
           ))}
         </nav>
       </header>

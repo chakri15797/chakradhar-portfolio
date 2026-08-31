@@ -239,12 +239,15 @@ section > .inner, footer > .inner { max-width: var(--shell); margin: 0 auto; pad
   padding: 6px 12px; cursor: pointer; border-radius: var(--radius);
 }
 @media (max-width: 760px) {
+  .nav { height: auto; flex-wrap: wrap; padding: 0 20px; }
+  .nav .mark { padding: 17px 0; }
+  .nav .burger { margin: 13px 0; }
   .nav nav { display: none; flex-direction: column; gap: 4px;
-    position: absolute; top: var(--nav-h); left: 0; right: 0;
-    background: var(--c-bg-deep); border-bottom: 1px solid var(--c-grid-str);
-    padding: 16px 24px; }
+    order: 3; flex: 1 1 100%;
+    padding: 0 0 16px; }
   .nav nav.open { display: flex; }
-  .nav nav a { padding: 8px 0; }
+  .nav nav a { padding: 9px 0; border-top: 1px solid var(--c-grid-str); }
+  .nav nav a:first-child { border-top: none; }
   .nav .burger { display: inline-block; }
 }
 
